@@ -8,6 +8,7 @@ public class ArrayTools {
         System.out.println("Product: " + product(array));
         reverse(array);
         System.out.println("Reversed: " + Arrays.toString(array));
+        System.out.println(Arrays.toString(array) + " is palindrome: " + isPalindrome(array));
     }
 
 
@@ -26,5 +27,12 @@ public class ArrayTools {
             array[i] = array[n - i - 1];
             array[n - i - 1] = temp;
         }
+    }
+
+
+    static boolean isPalindrome(int[] array) {
+        int[] reversed = Arrays.copyOf(array, array.length);
+        ArrayTools.reverse(reversed);
+        return Arrays.equals(array, reversed);
     }
 }
