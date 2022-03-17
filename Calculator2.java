@@ -6,8 +6,14 @@ public class Calculator2 {
         }
         int x = Integer.parseInt(args[0]);
         int y = Integer.parseInt(args[2]);
+        String operation = args[1];
+        int result = eval(x, y, operation);
+        System.out.printf("%d %s %d = %d\n", x, args[1], y, result);
+    }
+
+    static int eval(int x, int y, String operation) {
         int result;
-        switch (args[1]) {
+        switch (operation) {
             case "+":
                 result = x + y;
                 break;
@@ -25,8 +31,8 @@ public class Calculator2 {
                 break;
             default:
                 System.err.println("ERROR! Second argument should be operator.");
-                return;
+                return 0;
         }
-        System.out.printf("%d %s %d = %d\n", x, args[1], y, result);
+        return result;
     }
 }

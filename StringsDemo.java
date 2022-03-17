@@ -10,25 +10,31 @@ public class StringsDemo {
 
     static boolean isPalindrome(String str) {
         int n = str.length();
-        for (int i = 0; i < n / 2; i++)
-            if (str.charAt(i) != str.charAt(n - i - 1))
+        for (int i = 0; i < n / 2; i++) {
+            if (str.charAt(i) != str.charAt(n - i - 1)) {
                 return false;
+            }
+        }
         return true;
     }
 
     static boolean isPrefix(String str, String prefix) {
-        if (prefix.length() > str.length())
+        if (prefix.length() > str.length()) {
             return false;
+        }
         int n = prefix.length();
-        for (int i = 0; i < n; i++)
-            if (str.charAt(i) != prefix.charAt(i))
+        for (int i = 0; i < n; i++) {
+            if (str.charAt(i) != prefix.charAt(i)) {
                 return false;
+            }
+        }
         return true;
     }
 
     static String removePrefix(String str, String prefix) {
-        if (!isPrefix(str, prefix))
+        if (!isPrefix(str, prefix)) {
             return str;
+        }
         return str.substring(prefix.length());
     }
 }

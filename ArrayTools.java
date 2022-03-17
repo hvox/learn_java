@@ -18,8 +18,9 @@ public class ArrayTools {
 
     static int product(int[] array) {
         int result = 1;
-        for (int x : array)
+        for (int x : array) {
             result *= x;
+        }
         return result;
     }
 
@@ -43,8 +44,9 @@ public class ArrayTools {
 
     static int[] removePrefix(int[] array, int[] prefix) {
         int mismatch = Arrays.mismatch(array, prefix);
-        if (mismatch != -1 && mismatch != prefix.length)
+        if (mismatch != -1 && mismatch != prefix.length) {
             return array;
+        }
         return Arrays.copyOfRange(array, prefix.length, array.length);
     }
 }
