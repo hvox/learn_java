@@ -47,4 +47,8 @@ public class MyArray {
         }
         return Arrays.copyOfRange(array, prefix.length, array.length);
     }
+
+    public String toString() {
+        return Arrays.toString(array);
+    }
 }
