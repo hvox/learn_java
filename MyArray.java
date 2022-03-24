@@ -17,6 +17,29 @@ public class MyArray {
             array[i] = sc.nextInt();
     }
 
+    public static void main(String[] args) {
+        MyArray array;
+        try {
+            String inputPath = "data/input.txt";
+            if (args.length == 1) {
+                inputPath = args[0];
+            }
+            array = new MyArray(new Scanner(new FileReader(inputPath)));
+        }
+        catch (FileNotFoundException ex) {
+            System.err.println("ERROR! Файл не найден!");
+            return;
+        }
+        System.out.println("Array: " + array);
+        System.out.println("Product: " + array.product());
+        System.out.println("Reversed: " + Arrays.toString(array.reversed()));
+        System.out.println("" + array + " is palindrome: " + array.isPalindrome());
+        int[] prefix = {1, 2};
+        int[] difference = array.removePrefix(prefix);
+        System.out.print("" + array + " - " + Arrays.toString(prefix));
+        System.out.println(" = " + Arrays.toString(difference));
+    }
+
     int product() {
         int result = 1;
         for (int x : array) {
