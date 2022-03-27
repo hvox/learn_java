@@ -40,7 +40,7 @@ public class MyArray {
         System.out.println(" = " + Arrays.toString(difference));
     }
 
-    int product() {
+    public int product() {
         int result = 1;
         for (int x : array) {
             result *= x;
@@ -48,7 +48,7 @@ public class MyArray {
         return result;
     }
 
-    int[] reversed() {
+    public int[] reversed() {
         int n = array.length;
         int[] result = Arrays.copyOf(array, array.length);
         for (int i = 0; i < n / 2; i++) {
@@ -59,11 +59,11 @@ public class MyArray {
         return result;
     }
 
-    boolean isPalindrome() {
+    public boolean isPalindrome() {
         return Arrays.equals(array, this.reversed());
     }
 
-    int[] removePrefix(int[] prefix) {
+    public int[] removePrefix(int[] prefix) {
         int mismatch = Arrays.mismatch(array, prefix);
         if (mismatch != -1 && mismatch != prefix.length) {
             return array;
