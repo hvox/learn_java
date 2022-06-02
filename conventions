@@ -1,0 +1,9 @@
+# Class file structure
+class ... {
+	static variables
+	public variables
+	protected variables
+	private variables
+	constructors
+	methods
+}
